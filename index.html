@@ -914,10 +914,10 @@
                 <button class="youtube-modal-close" id="closeModal">×</button>
             </div>
             <div class="youtube-video-container">
-                <iframe id="youtubeVideo" src="https://www.youtube.com/embed/2Vv-BfVoq4g"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+                <video id="mainVideo" style="width: 100%; height: auto; border-radius: 8px;">
+                    <source src="musica.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
             </div>
         </div>
     </div>
@@ -1074,18 +1074,16 @@
             }
         });
 
-        // YouTube Modal Functionality
+        // Video Modal Functionality
         const modal = document.getElementById('youtubeModal');
         const audioButton = document.getElementById('audioControl');
         const closeModalBtn = document.getElementById('closeModal');
-        const youtubeVideo = document.getElementById('youtubeVideo');
-        const videoId = '2Vv-BfVoq4g'; // Ed Sheeran - Perfect (Official Music Video)
+        const mainVideo = document.getElementById('mainVideo');
 
-        // Open modal and load video
+        // Open modal and play video
         audioButton.addEventListener('click', function () {
             modal.classList.add('active');
-            // Load video with autoplay
-            youtubeVideo.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&origin=https://scorcueramel.github.io";
+            mainVideo.play();
             // Prevent body scroll when modal is open
             document.body.style.overflow = 'hidden';
         });
@@ -1093,8 +1091,7 @@
         // Close modal
         function closeModal() {
             modal.classList.remove('active');
-            // Stop video by removing src
-            youtubeVideo.src = '';
+            mainVideo.pause();
             // Restore body scroll
             document.body.style.overflow = '';
         }

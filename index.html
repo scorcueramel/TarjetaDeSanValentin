@@ -914,9 +914,9 @@
                 <button class="youtube-modal-close" id="closeModal">×</button>
             </div>
             <div class="youtube-video-container">
-                <iframe id="youtubeVideo" src="https://www.youtube-nocookie.com/embed/2Vv-BfVoq4g"
+                <iframe id="youtubeVideo" src="https://www.youtube.com/embed/2Vv-BfVoq4g"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    referrerpolicy="no-referrer" allowfullscreen>
+                    allowfullscreen>
                 </iframe>
             </div>
         </div>
@@ -1085,7 +1085,7 @@
         audioButton.addEventListener('click', function () {
             modal.classList.add('active');
             // Load video with autoplay
-            youtubeVideo.src = "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1";
+            youtubeVideo.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&origin=https://scorcueramel.github.io";
             // Prevent body scroll when modal is open
             document.body.style.overflow = 'hidden';
         });
